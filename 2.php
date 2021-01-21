@@ -11,6 +11,10 @@
         }
         abstract public function useSkill();
         abstract public function move($speed, $direction);
+
+        public function beep(){
+            echo $this->player . ': BEEEEP!';
+        }
     }
 
     interface iRocketStorm{
@@ -39,6 +43,7 @@
             $this->player = $player;
             $this->hp = 300;
             $this->fuel = 100;
+            $this->maxSpeed = 100;
         }
 
         public function move($speed, $direction){
@@ -62,6 +67,7 @@
             $this->player = $player;
             $this->hp = 350;
             $this->fuel = 80;
+            $this->maxSpeed = 60;
         }
 
         public function move($speed, $direction){
@@ -85,6 +91,11 @@
             $this->player = $player;
             $this->hp = 500;
             $this->fuel = 150;
+            $this->maxSpeed = 40;
+        }
+
+        public function shoot($enemy){
+            $enemy->setHp($enemy->hp - 20);
         }
 
         public function move($speed, $direction){
