@@ -10,6 +10,7 @@
             $enemy->setHp($enemy->hp - 10);
         }
         abstract public function useSkill();
+        abstract public function move($speed, $direction);
     }
 
     interface iRocketStorm{
@@ -40,6 +41,10 @@
             $this->fuel = 100;
         }
 
+        public function move($speed, $direction){
+            
+        }
+
         public function launchRockets(){
                 
         }
@@ -59,6 +64,10 @@
             $this->fuel = 80;
         }
 
+        public function move($speed, $direction){
+            
+        }
+
         public function launchDrones(){
             
         }
@@ -76,6 +85,10 @@
             $this->player = $player;
             $this->hp = 500;
             $this->fuel = 150;
+        }
+
+        public function move($speed, $direction){
+            
         }
 
         public function activateShield(){
